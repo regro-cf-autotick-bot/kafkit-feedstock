@@ -1,5 +1,5 @@
 {% set name = "kafkit" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kafkit-{{ version }}.tar.gz
-  sha256: e372f66e710a344dfc0c370a05974e354dba56ea298c495517e68768b61cfaf5
+  sha256: 9cf40f160fa75288e4a8d1df1dc084c3df48b39720866b1e5b1ec5db877bc03b
 
 build:
   noarch: python
