@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kafkit-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kafkit-{{ version }}.tar.gz
   sha256: e372f66e710a344dfc0c370a05974e354dba56ea298c495517e68768b61cfaf5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - fastavro
-    - python >=3.8
+    - python >={{ python_min }}
     - uritemplate
 
 test:
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://kafkit.lsst.io
